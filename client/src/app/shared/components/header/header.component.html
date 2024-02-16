@@ -1,12 +1,12 @@
 <header class="">
   <p-menubar [model]="items">
-    <!-- <ng-template pTemplate="start">
-      <span class="text-xl font-extrabold">ReStore</span>
-    </ng-template> -->
-    <ng-template pTemplate="end">
-      
+    <ng-template pTemplate="start" class="p-2">
+      <img src="/assets/logo.png" width="200" height="60"/>
+    </ng-template>
+    <ng-template pTemplate="end" class="flex gap-2 align-items-center">
+      <p-button [text]="true" icon="pi pi-shopping-cart" class="mr-2"></p-button>
+      <p-button label="Login"></p-button>
     </ng-template>
   </p-menubar>
-  <app-breadcrumb></app-breadcrumb>
 </header>
 

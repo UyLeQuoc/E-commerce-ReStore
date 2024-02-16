@@ -1,4 +1,5 @@
 using API.Data;
+using API.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,11 +25,12 @@ builder.Services.AddCors(opt =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseMiddleware<ExceptionMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors("CorsPolicy");
 }
 
 app.UseAuthorization();
@@ -48,5 +50,7 @@ catch(Exception ex)
 {
     logger.LogError(ex, "An problem occurred during migration!");
 }
+
+app.UseCors("CorsPolicy");
 
 app.Run();

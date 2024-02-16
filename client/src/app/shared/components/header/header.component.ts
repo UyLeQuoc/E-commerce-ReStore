@@ -4,11 +4,12 @@ import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, MenubarModule, InputTextModule, BreadcrumbComponent],
+  imports: [RouterLink, MenubarModule, InputTextModule, BreadcrumbComponent, ButtonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

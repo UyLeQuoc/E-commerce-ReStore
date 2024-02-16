@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../../types/product/product';
-import { NgOptimizedImage } from '@angular/common'
+import { ButtonModule } from 'primeng/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [ButtonModule, RouterLink],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })

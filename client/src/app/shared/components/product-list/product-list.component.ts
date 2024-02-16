@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import { Product } from '../../../types/product/product';
-import { ProductService } from '../../../apis/product.service';
+import { ProductService } from '../../../services/product.service';
 import { ProductDetailsComponent } from '../product-details/product-details.component';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductDetailsComponent],
+  imports: [ProductDetailsComponent, ToastModule],
   templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+  styleUrl: './product-list.component.css',
+  providers: [MessageService]
 })
 export class ProductListComponent {
   products?: Product[];
@@ -16,7 +19,7 @@ export class ProductListComponent {
   currentIndex = -1;
   title = '';
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.retrieveproducts();
@@ -30,39 +33,7 @@ export class ProductListComponent {
         },
         error: (e) => {
           console.error(e)
-          this.products = [{
-            id: 1,
-            name: "Angular Speedster Board 2000",
-            description:
-                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-            price: 20000,
-            pictureUrl: "/images/products/sb-ang1.png",
-            brand: "Angular",
-            type: "Boards",
-            quantityInStock: 100
-          },
-          {
-            id: 2,
-            name: "Angular Speedster Board 2000",
-            description:
-                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-            price: 20000,
-            pictureUrl: "/images/products/sb-ang1.png",
-            brand: "Angular",
-            type: "Boards",
-            quantityInStock: 100
-          },
-          {
-            id: 3,
-            name: "Angular Speedster Board 2000",
-            description:
-                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-            price: 20000,
-            pictureUrl: "/images/products/sb-ang1.png",
-            brand: "Angular",
-            type: "Boards",
-            quantityInStock: 100
-          }]
+          this.messageService.add({ severity: 'error', summary: 'Fetch Product List Error', detail: 'Forget to turn API or server is down!' });
         }
       });
   }

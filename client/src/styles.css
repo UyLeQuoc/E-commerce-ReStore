@@ -12,9 +12,14 @@ body{
 
 .container{
   width: 100%;
+  margin: 0 auto;
 }
 @media (min-width: 1204px) {
   .container{
     max-width: 1204px;
   }
+}
+
+.min-height-body{
+  min-height: 80vh;
 }
