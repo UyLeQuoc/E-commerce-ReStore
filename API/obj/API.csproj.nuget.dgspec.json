@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\E-commerce ReStore\\API\\API.csproj": {}
+    "D:\\Code\\MyProject\\6. E-commerce ReStore\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\Project\\E-commerce ReStore\\API\\API.csproj": {
+    "D:\\Code\\MyProject\\6. E-commerce ReStore\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\E-commerce ReStore\\API\\API.csproj",
+        "projectUniqueName": "D:\\Code\\MyProject\\6. E-commerce ReStore\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Project\\E-commerce ReStore\\API\\API.csproj",
+        "projectPath": "D:\\Code\\MyProject\\6. E-commerce ReStore\\API\\API.csproj",
         "packagesPath": "C:\\Users\\lequo\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\E-commerce ReStore\\API\\obj\\",
+        "outputPath": "D:\\Code\\MyProject\\6. E-commerce ReStore\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +45,18 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "HotChocolate.AspNetCore": {
+              "target": "Package",
+              "version": "[13.9.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.9, )"
@@ -89,6 +101,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.19, 7.0.19]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.19, 7.0.19]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.19, 7.0.19]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.19, 7.0.19]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -97,7 +127,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
         }
       }
     }
